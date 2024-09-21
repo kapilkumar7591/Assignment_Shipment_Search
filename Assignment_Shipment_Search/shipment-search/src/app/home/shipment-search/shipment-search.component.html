@@ -1,0 +1,70 @@
+
+<div class="content">
+    <div class="navbar">
+        <a href="#home">IBM Store Engagement</a>
+        <a href="#store">Store Associate</a>
+    </div>&nbsp;
+    <div class="centered-text">
+      <h2>{{labels.LABEL_WhatDoYouWantToDO}}</h2>
+    </div>
+    <div class="container">
+        <form #shipmentSearchForm="ngForm" (ngSubmit)="onSubmit(shipmentSearchForm)">
+            <table width="100%">
+              <tr>
+                <td>
+                  <h1>Shipment Search</h1>
+                </td>
+              </tr>
+          
+              <tr>
+                <td>
+                  <input type="text" placeholder="Order #" id="orderId" name="orderId" [(ngModel)]="formData.orderId">
+                </td>
+              </tr>
+          
+              <tr>
+                <td>
+                  <input type="text" placeholder="Shipment #" id="shipmentNumber" name="shipmentNumber" [(ngModel)]="formData.shipmentNumber">
+                </td>
+              </tr>
+          
+              <tr>
+                <td>
+                  <input type="text" placeholder="First Name" id="firstName" name="firstName" [(ngModel)]="formData.firstName" required>
+                </td>
+              </tr>
+          
+              <tr>
+                <td>
+                  <input type="text" placeholder="Last Name" id="lastName" name="lastName" [(ngModel)]="formData.lastName">
+                </td>
+              </tr>
+          
+              <tr>
+                <td>
+                  <input type="email" placeholder="Email ID" id="emailId" name="emailId" [(ngModel)]="formData.emailId">
+                </td>
+              </tr>
+          
+              <tr>
+                <td>
+                  <input type="tel" placeholder="Phone Number" id="phoneNumber" name="phoneNumber" [(ngModel)]="formData.phoneNumber">
+                </td>
+              </tr>
+            </table>
+          
+            <div>
+              <table width="100%">
+                <tr>
+                  <td style="width:80%;">&nbsp;</td>
+                  <td><button type="reset" class="button MainBtn" (click)="resetForm(shipmentSearchForm)">Reset</button></td>
+                  <td><button type="submit" class="button MainBtn">Search</button></td>
+                </tr>
+              </table>
+            </div>
+          </form>
+          
+    </div>
+
+</div>
+

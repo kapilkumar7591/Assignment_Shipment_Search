@@ -1,0 +1,99 @@
+/* styles.css */
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+form label,
+form input,
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    color: white;
+    padding: 10px 20px;
+}
+
+.navbar a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.navbar-center {
+    display: block;
+    margin: auto;
+    width: max-content;
+    background-color: #666;
+    padding: 10px;
+}
+
+.navbar a:last-child {
+    float: right;
+}
+
+.centered-text {
+    text-align: center; /* Light grey color */
+    font-size: 18px;
+}
+.button-container {
+    text-align: right;
+}
+
+.search-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #D3D3D3;
+}
+.content{
+    background-color: #f4f4f4;
+    height: 100vh;
+}
+
+.button {
+    background-color: #009688; /* Green */
+    border: none;
+    color: #009688;
+    text-align: center;
+    cursor: pointer;
+    height: 30px;
+    width: 90px;
+  }
+  
+  .MainBtn {
+    background-color: white; 
+    color: 2px solid #009688;; 
+    border: 2px solid #009688;
+  }
+  
+  .MainBtn:hover {
+    background-color: #009688;
+    color: white;
+  }

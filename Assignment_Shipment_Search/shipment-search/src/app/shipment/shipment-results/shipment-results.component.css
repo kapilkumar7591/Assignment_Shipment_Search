@@ -1,0 +1,105 @@
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    color: white;
+    padding: 10px 20px;
+}
+
+.navbar a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.navbar-center {
+    display: block;
+    margin: auto;
+    width: max-content;
+    background-color: #666;
+    padding: 10px;
+}
+
+.navbar a:last-child {
+    float: right;
+}
+
+.sub_navbar {
+    background-color: white;
+    overflow: hidden;
+    color: black;
+    padding: 10px 20px;
+}
+
+
+.content{
+    background-color: #dbd8d8;
+    height: 98vh;
+    position: relative;
+}
+
+.shipment-container {
+    margin: 10px;
+    background-color: white;
+    height: 85vh;
+    display: block;
+}
+
+#backIcon {
+    height: 25px;
+    width: 25px;
+    border-right: black solid 1px;
+}
+
+.button {
+    background-color: #009688; /* Green */
+    border: none;
+    color: #009688;
+    text-align: center;
+    cursor: pointer;
+    height: 30px;
+    width: 90px;
+  }
+  
+  .MainBtn {
+    background-color: white; 
+    color: 2px solid #009688;; 
+    border: 2px solid #009688;
+  }
+  
+  .MainBtn:hover {
+    background-color: #009688;
+    color: white;
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+    margin: 0; /* Remove any default margin */
+}
+
+.dialog {
+    /* visibility: hidden; */
+    position: absolute;
+    right: 0;
+    width: 30%;
+    height: auto;
+    margin-right: 15px;
+    background-color: white; /* Example overlay color (semi-transparent red) */
+    border:1px solid black;
+    z-index: 1; /* Ensure the overlay is above the base content */
+    /* Other overlay styles (text, images, etc.) */
+}
+
+.hover-container {
+    background-color: white;
+    padding: 10px;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  }
+  
+  .hover-container:hover {
+    background-color: #dbd8d8;
+  }
+

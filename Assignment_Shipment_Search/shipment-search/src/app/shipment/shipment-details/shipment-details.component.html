@@ -1,0 +1,160 @@
+<div class="content">
+    <div class="navbar">
+        <a href="#home">IBM Store Engagement</a>
+        <a href="#store">Store Associate</a>
+    </div>
+    <div class="shipment-container" Border="1" style = "display: block;text-align: right;">
+        <div style="border-color: black;">
+            <table Border =1 [cellSpacing]="0" width="100%">
+                <tr>
+                    <td>
+                        <table style="width:100%;" >
+                <tr>
+                    <td rowspan="2"><a href="#home"><mat-icon id="backIcon"
+                        style="vertical-align: baseline;" href="#home">keyboard_arrow_left</mat-icon>&nbsp;</a></td>
+                    <td ><h1>Shipment Summary</h1></td>
+                    <td style="width: 90%;padding-right: 20px;text-align: right;"><a href="#home"><button class="button MainBtn" *ngIf="!isMobileResolution" >Close</button></a>
+                        <a href="#home"><mat-icon class="button MainBtn" *ngIf="isMobileResolution"  >close</mat-icon></a></td>
+                </tr>
+                <tr *ngFor="let details of shipmentDetails">
+                    <td>{{details.OrderNo}}</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+        </div>
+        
+    <div style ="background-color: #dbd8d8;margin: 10px;">
+        <div *ngIf="showCompleteInfo">
+            <table width="100%">
+                <tr *ngFor="let details of shipmentDetails">
+                    <td colspan="4">
+                       <p style="color: #CC0066;width:25%;">{{ details.Status }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="25%">Shipment Number</td>
+                    <td width="25%">&nbsp;</td>
+                    <td width="25%">Expected ship date</td>
+                    <td width="25%">&nbsp;</td>
+                </tr>
+                <tr *ngFor="let details of shipmentDetails">
+                    <td width="25%"> {{ details.ShipmentNo }}</td>
+                    <td width="25%">&nbsp;</td>
+                    <td width="25%"> {{ details.ExpectedShipmentDate }}</td>
+                    <td width="25%">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="25%">Carrier</td>
+                    <td width="25%">&nbsp;</td>
+                    <td width="25%">Customer info</td>
+                    <td width="25%">&nbsp;</td>
+                </tr>
+                <tr *ngFor="let details of shipmentDetails">
+                    <td width="25%"> {{ details.ScacAndService }}</td>
+                    <td width="25%">&nbsp;</td>
+                    <td width="25%"> {{ details.BillToAddress.FirstName }}</td>
+                    <td width="25%">&nbsp;</td>
+                </tr>
+                <tr *ngFor="let details of shipmentDetails">
+                    <td width="25%"> {{ details.ScacAndService }}</td>
+                    <td width="25%">&nbsp;</td>
+                    <td width="25%"> {{ details.BillToAddress.FirstName }}</td>
+                    <td width="25%">&nbsp;</td>
+                </tr>
+                <tr *ngFor="let details of shipmentDetails">
+                    <td colspan="2">&nbsp;</td>
+                    <td width="25%"> {{ details.BillToAddress.Phonenumber }}</td>
+                    <td width="25%">&nbsp;</td>
+                </tr>
+                <tr *ngFor="let details of shipmentDetails">
+                    <td colspan="2">&nbsp;</td>
+                    <td width="25%"> {{ details.BillToAddress.EmailID }}</td>
+                    <td width="25%">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="25%">Assigned to</td>
+                    <td colspan="3">&nbsp;</td>
+                    
+                </tr>
+                <tr *ngFor="let details of shipmentDetails">
+                    <td width="25%"> {{ details.AssignedToUserId }}</td>
+                    <td colspan="3">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="25%">Ship to</td>
+                    <td width="25%">&nbsp;</td>
+                    <td width="25%">Bill to</td>
+                    <td width="25%">&nbsp;</td>
+                </tr>
+                <tr *ngFor="let details of shipmentDetails">
+                    <td width="25%"> {{ details.ToAddress.FirstName }}</td>
+                    <td width="25%">&nbsp;</td>
+                    <td width="25%"> {{ details.BillToAddress.FirstName }}</td>
+                    <td width="25%">&nbsp;</td>
+                </tr>
+                <tr *ngFor="let details of shipmentDetails">
+                    <td width="25%"> {{ details.ToAddress.AddressLine1 }}</td>
+                    <td width="25%">&nbsp;</td>
+                    <td width="25%"> {{ details.BillToAddress.AddressLine1 }}</td>
+                    <td width="25%">&nbsp;</td>
+                </tr>
+                <tr *ngFor="let details of shipmentDetails">
+                    <td width="25%"> {{ details.ToAddress.City }},{{ details.ToAddress.State }},{{ details.ToAddress.ZipCode }}</td>
+                    <td width="25%">&nbsp;</td>
+                    <td width="25%"> {{ details.BillToAddress.City }},{{ details.BillToAddress.State }},{{ details.BillToAddress.ZipCode }}</td>
+                    <td width="25%">&nbsp;</td>
+                </tr>
+                <tr *ngFor="let details of shipmentDetails">
+                    <td width="25%"> {{ details.ToAddress.Country }}</td>
+                    <td width="25%">&nbsp;</td>
+                    <td width="25%"> {{ details.BillToAddress.Country }}</td>
+                    <td width="25%">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;;</td>
+                </tr>
+                <tr>
+                    <td colspan = "5" style="text-align: right;">
+                        <a (click)="toggleInfo()" style="color: #CC0066;cursor: pointer;">{{ showCompleteInfo ? 'Hide Info' : 'Show Info' }}</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div *ngIf="!showCompleteInfo">
+            <table width="100%">
+                <tr *ngFor="let details of shipmentDetails">
+                    <td width="10%">
+                       <p style="color: #CC0066;">{{ details.Status }}</p>
+                    </td>
+                    <td colspan="4">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="10%">Shipment Number</td>
+                    <td width="20%">&nbsp;</td>
+                    <td width="25%">Expected ship date</td>
+                    <td width="20%">&nbsp;</td>
+                    <td width="25%">Ship to</td>
+                </tr>
+                <tr *ngFor="let details of shipmentDetails">
+                    <td > {{ details.ShipmentNo }}</td>
+                    <td >&nbsp;</td>
+                    <td > {{ details.ExpectedShipmentDate }}</td>
+                    <td >&nbsp;</td>
+                    <td >{{ details.BillToAddress.City }},{{ details.BillToAddress.State }},{{ details.BillToAddress.ZipCode }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;;</td>
+                </tr>
+                <tr>
+                    <td colspan = "5" style="text-align: right;">
+                        <a (click)="toggleInfo()" style="color: #CC0066;">{{ showCompleteInfo ? 'Hide Info' : 'Show Info' }}</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    color: white;
+    padding: 10px 20px;
+}
+
+.navbar a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.navbar-center {
+    display: block;
+    margin: auto;
+    width: max-content;
+    background-color: #666;
+    padding: 10px;
+}
+
+.navbar a:last-child {
+    float: right;
+}
+
+.sub_navbar {
+    background-color: white;
+    overflow: hidden;
+    color: black;
+    padding: 10px 20px;
+}
+
+
+.content{
+    background-color: #dbd8d8;
+    height: 98vh;
+}
+
+.shipment-container {
+    margin: 10px;
+    background-color: white;
+    height: 85vh;
+    display: block;
+}
+
+#backIcon {
+    height: 25px;
+    width: 25px;
+    border-right: black solid 1px;
+}
+
+.button {
+    background-color: #009688; /* Green */
+    border: none;
+    color: #009688;
+    text-align: center;
+    cursor: pointer;
+    height: 30px;
+    width: 90px;
+  }
+  
+  .MainBtn {
+    background-color: white; 
+    color: 2px solid #009688;; 
+    border: 2px solid #009688;
+  }
+  
+  .MainBtn:hover {
+    background-color: #009688;
+    color: white;
+  }
+
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}

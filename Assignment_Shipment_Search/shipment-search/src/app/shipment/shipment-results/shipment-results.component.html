@@ -1,0 +1,125 @@
+<div class="content">
+    <div class="navbar">
+        <a href="#home">IBM Store Engagement</a>
+        <a href="#store">Store Associate</a>
+    </div>
+    <div class="shipment-container" Border="1" style="display: block;">
+
+        <div class="shipment-container" Border="1" style="display: block;text-align: right;">
+            <div style="border-color: black;">
+                <table Border=1 [cellSpacing]="0" width="100%">
+                    <tr>
+                        <td>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width: 10%; padding-left: 20px;"><a><mat-icon id="backIcon"
+                                                style="vertical-align: baseline;"
+                                                (click)="goBack()">keyboard_arrow_left</mat-icon>&nbsp;</a>
+                                    </td>
+                                    <td>
+                                        <h1>Shipment Search Result</h1>
+                                    </td>
+                                    <td style="width: 90%;padding-right: 20px;text-align: right;">
+                                        <a href="#home"><button class="button MainBtn"
+                                                *ngIf="!isMobileResolution">Close</button></a>
+                                        <a href="#home"><mat-icon class="button MainBtn" style="border:none;"
+                                                *ngIf="isMobileResolution">close</mat-icon></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table style="width:100%;">
+                    <tr>
+                        <td style="width: 10%;">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 10%; padding-left: 20px;font-size: 20px;">{{totalData}} Result</td>
+                        <td style="width: 90%;padding-right: 20px;text-align: right;">
+                            <button mat-icon-button (click)=onclick()><mat-icon>filter_alt</mat-icon></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div *ngIf="isDialog" class="dialog">
+                <h2 mat-dialog-title style="text-align: center">Refine</h2>
+                <hr style="width:100%;">
+                <div style="background-color: #dbd8d8;margin: 10px;">
+                    <div>
+                        <table>
+                            <tr>
+                                <td style="text-align: right;">
+                                    <b style="margin:10px;text-align: left;">Status</b>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div *ngFor="let option of options">
+                        <table>
+                            <tr>
+                                <mat-checkbox [(ngModel)]="option.selected" (change)="selectedItem($event,option)"
+                                    style="color: 2px solid #009688;">
+                                    {{ option.name }}
+                                </mat-checkbox>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <table width="100%">
+                        <tr>
+                            <td colspan="2">
+                                <hr style="width:100%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;width: 78%;">
+                                <button type="button" class="button MainBtn" (click)="toggleAll()">Reset</button>
+                            </td>
+                            <td style="text-align: right;"><button type="button" class="button MainBtn"
+                                    (click)="applyFilter()">Apply</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <table Border="1" [cellSpacing]="0" width="100%">
+                    <tr *ngFor="let details of shipments">
+                        <td>
+                            <table class="hover-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()"
+                                width="100%">
+                                <tr>
+                                    <td width="10%"> {{ details.OrderNo }}</td>
+                                    <td width="20%">&nbsp;</td>
+                                    <td width="25%"> {{ details.Status}}</td>
+                                    <td width="20%">&nbsp;</td>
+                                    <td width="25%"> Customer Info</td>
+                                </tr>
+                                <tr>
+                                    <td> {{ details.ShipmentLines.TotalNumberOfRecords }} product</td>
+                                    <td>&nbsp;</td>
+                                    <td> Assigned to:{{ details.AssignedToUserId }}</td>
+                                    <td>&nbsp;</td>
+                                    <td> {{ details.BillToAddress.FirstName }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Carrier: {{ details.ScacAndService }}</td>
+                                    <td>&nbsp;</td>
+                                    <td>Expected pickup date: {{ details.ExpectedShipmentDate }}</td>
+                                    <td>&nbsp;</td>
+                                    <td> {{ details.BillToAddress.DayPhone }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Shipment # {{ details.ShipmentNo }}</td>
+                                    <td colspan="4">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
